@@ -7,30 +7,28 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi    
 
-echo "Installing Nginx web server"
+  echo "Installing Nginx web server"
 dnf install nginx -y
-
 if [ $? -ne 0 ]; then
-    echo "Installing Nginx ... FAILURE"
+    echo "Nginx installation ... FAILURE"
     exit 1
 else 
-    echo "Installing Nginx ... SUCCESS"
-fi     
+    echo "Nginx installation ... SUCCESS"
+fi
 
 dnf install mysql -y
-
 if [ $? -ne 0 ]; then
-    echo "Installing MySQL ... FAILURE"
+    echo "MySQL installation ... FAILURE"
     exit 1
-else
-    echo "Installing MySQL ... SUCCESS"
+else 
+    echo "MySQL installation ... SUCCESS"
 fi
 
 dnf install nodejs -y
-
 if [ $? -ne 0 ]; then
-    echo "Installing Node.js ... FAILURE"
+    echo "NodeJS installation ... FAILURE"
     exit 1
-else
-    echo "Installing Node.js ... SUCCESS"
+else 
+    echo "NodeJS installation ... SUCCESS"
 fi
+
