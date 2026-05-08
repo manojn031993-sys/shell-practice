@@ -21,11 +21,10 @@ VALIDATE(){
 }
 
 echo "Installing Nginx web server"
-dnf install nginx -y &>> $LOGS_FILE |& tee -a $LOGS_FILE
+dnf install nginx -y &>> $LOGS_FILE 
 VALIDATE $? "Nginx installation"
-
-dnf install mysql -y &>> $LOGS_FILE |& tee -a $LOGS_FILE
+dnf install mysql -y &>> $LOGS_FILE 
 VALIDATE $? "MySQL installation"
 
-dnf install nodejs -y &>> $LOGS_FILE  |& tee -a $LOGS_FIL
+dnf install nodejs -y &>> $LOGS_FILE  
 VALIDATE $? "NodeJS installation"
