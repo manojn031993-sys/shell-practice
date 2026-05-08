@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 LOGS_FOLDER="/var/log/shell-script"
-LOGS_FILE="/var/log/shell-script/$0.log"
+LOGS_FILE="/var/log/shell-script/12-logs.log"
 
 if [ $USERID -ne 0 ]; then
     echo "please run this script as root user access or sudo access"
