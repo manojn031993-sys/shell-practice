@@ -20,11 +20,9 @@ VALIDATE(){
     fi
 }
 
-echo "Installing Nginx web server"
-dnf install nginx -y &>> $LOGS_FILE 
-VALIDATE $? "Nginx installation"
-dnf install mysql -y &>> $LOGS_FILE 
-VALIDATE $? "MySQL installation"
+for i in $@ # sudo sh 14-loops.sh nginx mysql nodejs
+do
+    dnf install $package -y
+    VALIDATE $? "$package installation"
+done
 
-dnf install nodejs -y &>> $LOGS_FILE  
-VALIDATE $? "NodeJS installation"
