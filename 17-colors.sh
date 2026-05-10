@@ -35,5 +35,6 @@ do
         VALIDATE $? "$package installation"
     else
         echo -e "$package is already installed...$Y skipping $N"
+        
     fi
 done
