@@ -6,7 +6,7 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 
-if [ $USERID -ne 0 ]; then
+if [ "$USERID" -ne 0 ]; then
     echo -e "$ please run this script as root user access or sudo access $N" | tee -a $LOGS_FILE
     exit 1
 fi    
@@ -30,5 +30,5 @@ do
         dnf install $package -y &>> $LOGS_FILE
         VALIDATE $? "$package installation"
     else
-        echo -e "$package is already installed,  $Y skipping $N"
+        echo -e "$package is already installed...$Y skipping $N"
     fi
