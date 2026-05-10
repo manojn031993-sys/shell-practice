@@ -2,13 +2,14 @@
 
 set -e  # this will be checking for errors, if there are errore it will exit
 
+USERID=$(id -u)
+LOGS_FOLDER="/var/log/shell-script"
+LOGS_FILE="/var/log/shell-script/$0.log"
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
-
-
 
 if [ $USERID -ne 0 ]; then
     echo -e "$R please run this script as root user access or sudo access $N" | tee -a $LOGS_FILE
